@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Complete Shopify-like Product Page</title>
+    <link rel="stylesheet" href="CSS/styles.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar" role="navigation" aria-label="Main site navigation">
+        <div class="navbar-container">
+            <div class="logo" aria-label="Homepage">MyStore</div>
+            <nav class="nav-menu" role="menubar">
+                <a href="#" role="menuitem" tabindex="0">Shop</a>
+                <a href="#" role="menuitem" tabindex="0">About</a>
+                <a href="#" role="menuitem" tabindex="0">Contact</a>
+            </nav>
+            <div class="nav-icons">
+                <button aria-label="Search">&#128269;</button>
+                <button aria-label="Account">&#128100;</button>
+                <button aria-label="Cart">&#128722;</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-container">
+        <!-- Image Gallery -->
+        <section class="image-gallery" aria-label="Product Images Gallery">
+            <div class="main-image" tabindex="0" aria-live="polite" aria-label="Main Product Image">
+                <img id="mainImage" src="assets/t-shirt.jpg" alt="Main product image - red color" />
+            </div>
+            <div class="thumbnails" role="list" aria-label="Product image thumbnails">
+                <img class="thumbnail selected" role="listitem" src="assets/t-shirt.jpg" alt="Thumbnail 1 for color red" tabindex="0" />
+                <img class="thumbnail" role="listitem" src="assets/hoodie.jpg" alt="Thumbnail 2 for color red" tabindex="0" />
+                <img class="thumbnail" role="listitem" src="assets/hoodie2.jpg" alt="Thumbnail 3 for color red" tabindex="0" />
+                <img class="thumbnail" role="listitem" src="assets/jeans2.jpg" alt="Thumbnail 4 for color red" tabindex="0" />
+                <img class="thumbnail" role="listitem" src="assets/jeans.jpg" alt="Thumbnail 5 for color red" tabindex="0" />
+            </div>
+        </section>
+
+        <!-- Product Info -->
+        <section class="product-info" aria-label="Product Details">
+            <h1>Stylish Cotton T-Shirt</h1>
+            <p class="price" aria-live="polite">$49.99</p>
+            <div class="size-options">
+                <label for="size">Size:</label>
+                <select id="size" aria-describedby="size-desc" aria-label="Select product size">
+                    <option value="S">Small (S)</option>
+                    <option value="M">Medium (M)</option>
+                    <option value="L">Large (L)</option>
+                    <option value="XL">Extra Large (XL)</option>
+                </select>
+                <button id="sizeChartBtn" aria-haspopup="dialog" aria-controls="sizeChartModal" aria-expanded="false">Size Chart</button>
+            </div>
+            <div class="color-options" role="radiogroup" aria-labelledby="colorLabel">
+                <label id="colorLabel">Color:</label>
+                <button class="color-swatch" style="background-color: red;" aria-checked="true" role="radio" tabindex="0" aria-label="Red"></button>
+                <button class="color-swatch" style="background-color: blue;" aria-checked="false" role="radio" tabindex="-1" aria-label="Blue"></button>
+                <button class="color-swatch" style="background-color: green;" aria-checked="false" role="radio" tabindex="-1" aria-label="Green"></button>
+            </div>
+            <button id="addToCart" aria-label="Add product to cart">Add to Cart</button>
+            <button id="compareColorsBtn" aria-haspopup="dialog" aria-controls="compareColorsModal" aria-expanded="false">Compare Colors</button>
+        </section>
+
+        <!-- Pair Well With -->
+        <section class="pair-well-with" aria-label="Products that pair well with this product">
+            <h2>Pair Well With</h2>
+            <div class="scrollable-row" role="list" tabindex="0">
+                <div class="product-card" role="listitem" tabindex="0">
+                    <img src="assets/sneakers.jpg" alt="Leather Wallet" />
+                    <p>Leather Wallet</p>
+                    <p>$19.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card" role="listitem" tabindex="0">
+                    <img src="assets/shirt.jpg" alt="Classic Belt" />
+                    <p>Classic Belt</p>
+                    <p>$29.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card" role="listitem" tabindex="0">
+                    <img src="assets/hat.jpg" alt="Matching Hat" />
+                    <p>Matching Hat</p>
+                    <p>$39.99</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Bundle Suggestion -->
+        <section class="product-bundle" aria-label="Buy These Together Bundle">
+            <h2>Buy These Together</h2>
+            <div class="bundle-item">
+                <p>Leather Wallet - $19.99</p>
+                <p>Classic Belt - $29.99</p>
+                <p><strong>Total: $49.98</strong></p>
+                <button>Add Bundle to Cart</button>
+            </div>
+        </section>
+
+        <!-- Tabs for Product Info -->
+        <section class="product-tabs" aria-label="Product Information Tabs">
+            <nav class="tabs" role="tablist">
+                <button class="tab active" role="tab" tabindex="0" aria-selected="true" aria-controls="description" id="description-tab">Description</button>
+                <button class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="info" id="info-tab">Product Information</button>
+                <button class="tab" role="tab" tabindex="-1" aria-selected="false" aria-controls="shipping" id="shipping-tab">Shipping Details</button>
+            </nav>
+            <div id="description" class="tab-content active" role="tabpanel" aria-labelledby="description-tab">
+                <h3>Description</h3>
+                <p>Our stylish cotton t-shirt comes in vibrant colors and multiple sizes. Crafted with comfort and durability in mind, perfect for everyday wear.</p>
+            </div>
+            <div id="info" class="tab-content" role="tabpanel" aria-labelledby="info-tab" hidden>
+                <h3>Product Information</h3>
+                <ul>
+                    <li>100% Cotton</li>
+                    <li>Machine Washable</li>
+                    <li>Available in multiple colors</li>
+                    <li>Manufactured ethically</li>
+                </ul>
+            </div>
+            <div id="shipping" class="tab-content" role="tabpanel" aria-labelledby="shipping-tab" hidden>
+                <h3>Shipping Details</h3>
+                <p>Ships within 3–5 business days.</p>
+                <p>Free shipping on orders over $50.</p>
+                <p>International shipping rates apply.</p>
+            </div>
+        </section>
+
+        <!-- Related Products Section -->
+        <section class="related-products" aria-label="Related Products">
+            <h2>Related Products</h2>
+            <div class="related-grid" role="list">
+                <div class="related-card" role="listitem" tabindex="0">
+                    <span class="badge">New</span>
+                    <img src="assets/trouser.jpg" alt="Product A" />
+                    <p>Product A</p>
+                    <p class="price">$24.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="related-card" role="listitem" tabindex="0">
+                    <span class="badge">Popular</span>
+                    <img src="assets/cap.jpg" alt="Product B" />
+                    <p>Product B</p>
+                    <p class="price">$34.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="related-card" role="listitem" tabindex="0">
+                    <img src="assets/shoes2.jpg" alt="Product C" />
+                    <p>Product C</p>
+                    <p class="price">$29.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="related-card" role="listitem" tabindex="0">
+                    <span class="badge">Popular</span>
+                    <img src="assets/t-shirt2.jpg" alt="Product D" />
+                    <p>Product D</p>
+                    <p class="price">$39.99</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Size Chart Modal -->
+    <div id="sizeChartOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+        <section id="sizeChartModal" class="modal" aria-labelledby="sizeChartTitle" tabindex="0">
+            <button class="close-btn" id="sizeChartClose" aria-label="Close Size Chart">&times;</button>
+            <h3 id="sizeChartTitle">Size Chart</h3>
+            <table class="size-chart-table">
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Chest (inches)</th>
+                        <th>Waist (inches)</th>
+                        <th>Length (inches)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>S</td><td>34–36</td><td>28–30</td><td>27</td></tr>
+                    <tr><td>M</td><td>38–40</td><td>32–34</td><td>28</td></tr>
+                    <tr><td>L</td><td>42–44</td><td>36–38</td><td>29</td></tr>
+                    <tr><td>XL</td><td>46–48</td><td>40–42</td><td>30</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Compare Colors Modal -->
+    <div id="compareColorsOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+        <section id="compareColorsModal" class="modal" aria-labelledby="compareColorsTitle" tabindex="0">
+            <button class="close-btn" id="compareColorsClose" aria-label="Close Compare Colors">&times;</button>
+            <h3 id="compareColorsTitle">Compare Colors</h3>
+            <p>Select two or more colors to compare visually:</p>
+            <div class="compare-colors-list">
+                <button class="color-swatch" style="background-color: red;" aria-pressed="false" aria-label="Red color"></button>
+                <button class="color-swatch" style="background-color: blue;" aria-pressed="false" aria-label="Blue color"></button>
+                <button class="color-swatch" style="background-color: green;" aria-pressed="false" aria-label="Green color"></button>
+                <button class="color-swatch" style="background-color: yellow;" aria-pressed="false" aria-label="Yellow color"></button>
+                <button class="color-swatch" style="background-color: purple;" aria-pressed="false" aria-label="Purple color"></button>
+            </div>
+        </section>
+    </div>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
